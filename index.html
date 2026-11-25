@@ -183,6 +183,32 @@ body:not(.ready) .me .tip{animation-play-state:paused}
 .bar-x{height:2px;background:var(--line);margin-top:4px;position:relative;overflow:hidden}
 .bar-x i{position:absolute;left:0;top:0;bottom:0;width:20%;background:var(--a1);transition:transform .2s}
 
+
+/* online links */
+.olh{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin:70px 0 22px}
+.olh h3{margin:0;font:400 clamp(32px,4vw,52px)/.95 var(--disp);text-transform:uppercase}
+.olh p{margin:0;color:var(--mute);max-width:44ch}
+.ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lk{position:relative;display:flex;flex-direction:column;gap:14px;min-height:250px;padding:26px;border:1px solid var(--line);border-radius:8px;background:var(--card);text-decoration:none;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease),border-color .4s}
+.lk::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--c,var(--a1));transform:translateY(101%);transition:transform .55s var(--ease)}
+.lk:hover,.lk:focus-visible{transform:translateY(-6px);border-color:transparent;outline:none}
+.lk:hover::before,.lk:focus-visible::before{transform:none}
+.lk .top{display:flex;justify-content:space-between;align-items:center}
+.lk .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--c,var(--a1));transition:background .4s}
+.lk:hover .ic,.lk:focus-visible .ic{background:#ffffff26}
+.lk .ic svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.lk .ar{width:46px;height:46px;border-radius:50%;border:1.5px solid #ffffff33;display:grid;place-items:center;transition:transform .5s var(--ease),background .3s}
+.lk:hover .ar{transform:rotate(-45deg);background:#fff}
+.lk .ar svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.2;transition:stroke .3s}
+.lk:hover .ar svg{stroke:var(--c,var(--a1))}
+.lk small{font:600 12px var(--mono);color:var(--mute);transition:color .3s;margin-top:auto}
+.lk:hover small{color:#ffffffcc}
+.lk h4{margin:0;font:400 clamp(26px,2.4vw,32px)/1 var(--disp);text-transform:uppercase}
+.lk p{margin:0;color:var(--mute);font-size:15px;transition:color .3s}
+.lk:hover p{color:#fff}
+.lk .host{font:600 13px var(--mono);color:var(--ink);opacity:.9;overflow-wrap:anywhere}
+@media(max-width:1000px){.ol{grid-template-columns:minmax(0,1fr)}.lk{min-height:0}}
+
 /* services list */
 .svl{border-top:1px solid var(--line)}
 .sv{position:relative;display:grid;grid-template-columns:70px minmax(0,1.1fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:28px 6px;border-bottom:1px solid var(--line);isolation:isolate;transition:padding .5s var(--ease),color .3s}
@@ -439,6 +465,21 @@ body.ld{overflow:hidden}
   </div>
   <div class="rail-x" id="works"></div>
   <div class="bar-x"><i id="wBar"></i></div>
+  <div class="olh"><h3 class="rv">Lihat karya saya <span class="r">secara online.</span></h3><p class="rv">Hasil foto, kanal YouTube yang saya kelola, dan website PPDB PKBM Mandiri.</p></div>
+  <div class="ol">
+    <a class="lk rv" style="--c:#d6336c" href="https://www.instagram.com/doubleten_photography/" data-cur="BUKA">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span><span class="ar"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      <small>Instagram · Fotografi</small><h4>DoubleTen Photography</h4><p>Kumpulan hasil foto saya: dokumentasi acara, potret, dan momen-momen terbaik.</p><span class="host">@doubleten_photography</span>
+    </a>
+    <a class="lk rv" style="--c:#e62117;--d:.08s" href="https://www.youtube.com/@MEDIASHOHIBULHAMROMATARAMAN" data-cur="TONTON">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="#fff"/></svg></span><span class="ar"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      <small>YouTube · Kanal yang saya kelola</small><h4>Media Shohibul Hamro Mataraman</h4><p>Siaran langsung dan video kegiatan majelis yang saya tangani bersama tim media.</p><span class="host">@MEDIASHOHIBULHAMROMATARAMAN</span>
+    </a>
+    <a class="lk rv" style="--c:#1f8a70;--d:.16s" href="https://ppdb-pkbmmandiri.netlify.app/" data-cur="KUNJUNGI">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M6 8h7M6 11h4"/></svg></span><span class="ar"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      <small>Website · Pendidikan</small><h4>PPDB PKBM Mandiri</h4><p>Website penerimaan peserta didik baru PKBM Mandiri yang saya tangani.</p><span class="host">ppdb-pkbmmandiri.netlify.app</span>
+    </a>
+  </div>
 </div></section>
 
 <section class="band" id="layanan" style="padding-top:0"><div class="wrap">
@@ -501,7 +542,7 @@ body.ld{overflow:hidden}
 
 <footer>
   <div class="huge" id="huge">Agus Muhaimin</div>
-  <div class="row"><span>© 2026 Agus Muhaimin · Martapura, Kalimantan Selatan</span><a href="#top">Kembali ke atas ↑</a></div>
+  <div class="row"><span>© 2026 Agus Muhaimin · Martapura, Kalimantan Selatan</span><span style="display:flex;gap:18px;flex-wrap:wrap"><a href="https://www.instagram.com/doubleten_photography/">DoubleTen Photography</a><a href="https://www.youtube.com/@MEDIASHOHIBULHAMROMATARAMAN">YouTube</a><a href="https://ppdb-pkbmmandiri.netlify.app/">PPDB PKBM</a><a href="#top">Kembali ke atas ↑</a></span></div>
 </footer>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto" aria-hidden="true">
