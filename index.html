@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agus Muhaimin — Portofolio</title>
 <meta name="description" content="Portofolio Agus Muhaimin — staf administrasi dan kreator multimedia dari Martapura: desain grafis, fotografi, editing video, dan live streaming.">
 <meta name="theme-color" content="#0b0b0d">
@@ -304,37 +304,46 @@ footer .row{max-width:1240px;margin:0 auto;display:flex;justify-content:space-be
 footer a{text-decoration:none;color:#c9c6cf}footer a:hover{color:#fff}
 
 
-/* music */
-.mz{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.mz-btn{display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:99px;border:1px solid #ffffff26;background:#141418e6;color:var(--ink);backdrop-filter:blur(12px);cursor:pointer;font:600 13px "Plus Jakarta Sans",sans-serif;box-shadow:0 18px 40px -18px #000;transition:transform .35s var(--ease),border-color .3s}
-.mz-btn:hover{transform:translateY(-3px);border-color:var(--a1)}
-.mz-btn:focus-visible{outline:3px solid var(--a1);outline-offset:3px}
-.disc{position:relative;width:44px;height:44px;border-radius:50%;flex:none;background:repeating-radial-gradient(circle,#1b1b20 0 2px,#26262c 2px 3px);box-shadow:0 0 0 2px #ffffff14}
-.disc::after{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 2px #0b0b0d}
-.disc::before{content:"";position:absolute;inset:20px;border-radius:50%;background:#0b0b0d;z-index:1}
-.mz.on .disc{animation:spin 3s linear infinite}
+/* music: turntable + Spotify */
+.tt{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.deck{position:relative;display:flex;align-items:center;gap:14px;padding:10px 20px 10px 10px;border-radius:99px;border:1px solid #ffffff22;background:linear-gradient(135deg,#1c1c22f2,#0f0f13f2);backdrop-filter:blur(14px);box-shadow:0 24px 50px -20px #000,inset 0 1px 0 #ffffff14;cursor:pointer;color:var(--ink);font-family:"Plus Jakarta Sans",sans-serif;transition:transform .4s var(--ease),border-color .3s}
+.deck:hover{transform:translateY(-3px);border-color:var(--a1)}
+.deck:focus-visible{outline:3px solid var(--a1);outline-offset:3px}
+.plat{position:relative;width:66px;height:66px;flex:none;margin-right:16px}
+.prog-ring{position:absolute;inset:-5px;transform:rotate(-90deg)}
+.prog-ring circle{fill:none;stroke-width:2.5}
+.prog-ring .bg{stroke:#ffffff14}.prog-ring .fg{stroke:var(--a1);stroke-linecap:round;stroke-dasharray:239;stroke-dashoffset:239;transition:stroke-dashoffset .5s linear}
+.vinyl{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffffff22 0,transparent 30%),repeating-radial-gradient(circle,#111 0 1.5px,#1d1d22 1.5px 3px);box-shadow:0 6px 16px -4px #000,0 0 0 2px #2a2a30}
+.vinyl::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 15%,#ffffff12 20%,transparent 28% 65%,#ffffff10 70%,transparent 78%)}
+.label{position:absolute;inset:21px;border-radius:50%;background:var(--grad) center/cover;box-shadow:0 0 0 2px #0b0b0d;z-index:1}
+.label::after{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#0b0b0d}
+.tt.on .vinyl,.tt.on .label{animation:spin 2.4s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.mz-t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;text-align:left}
-.mz-t b{font-size:13px}.mz-t small{font:500 11px var(--mono);color:var(--mute)}
-.eq{display:flex;align-items:flex-end;gap:2px;height:16px;margin-left:2px}
-.eq i{width:3px;height:4px;background:var(--a1);border-radius:1px}
-.mz.on .eq i{animation:eq .9s ease-in-out infinite}
-.eq i:nth-child(2){animation-delay:.2s!important}.eq i:nth-child(3){animation-delay:.4s!important}.eq i:nth-child(4){animation-delay:.1s!important}
-@keyframes eq{0%,100%{height:4px}50%{height:16px}}
-.mz:not(.on):not(.open) .mz-btn{animation:glow 2.4s ease-in-out infinite}
-@keyframes glow{50%{box-shadow:0 0 0 6px #ff3b2f33,0 18px 40px -18px #000}}
-.mz-card{width:300px;padding:14px;border-radius:16px;background:#141418f2;border:1px solid #ffffff1f;backdrop-filter:blur(14px);box-shadow:0 30px 60px -24px #000;transform-origin:100% 100%;transition:transform .45s var(--ease),opacity .3s}
-.mz:not(.open) .mz-card{transform:scale(.6) translateY(20px);opacity:0;pointer-events:none;position:absolute;bottom:72px;right:0}
-.mz-card .vid{aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
-.mz-card .vid iframe,.mz-card .vid>div{width:100%;height:100%;display:block;border:0}
-.mz-card .row2{display:flex;align-items:center;gap:8px;margin-top:12px}
-.mz-card .row2 b{flex:1;font-size:13px;line-height:1.3}
-.mz-card .row2 b small{display:block;font:500 11px var(--mono);color:var(--mute)}
-.mz-card button{width:40px;height:40px;border-radius:50%;border:1px solid #ffffff26;background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}
-.mz-card button:hover,.mz-card button:focus-visible{background:var(--a1);border-color:var(--a1);outline:none}
-.mz-card button svg{width:16px;height:16px;fill:currentColor}
-.mz-card .vol{width:100%;margin-top:10px;accent-color:var(--a1)}
-@media(max-width:700px){.mz{right:12px;bottom:12px}.mz-t{display:none}.mz-btn{padding:6px}.mz-card{width:min(300px,calc(100vw - 24px))}}
+.arm{position:absolute;right:-12px;top:-8px;width:34px;height:60px;transform-origin:26px 8px;transform:rotate(-32deg);transition:transform .8s var(--ease);z-index:2;pointer-events:none;filter:drop-shadow(0 3px 4px #0009)}
+.tt.on .arm{transform:rotate(0deg)}
+.dk-t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;text-align:left}
+.dk-t small{font:600 10.5px var(--mono);color:var(--a1);letter-spacing:.04em}
+.dk-t b{font-size:14px;margin-top:2px}
+.dk-t span{font-size:12px;color:var(--mute)}
+.bars{display:flex;align-items:flex-end;gap:2.5px;height:18px;margin-left:4px}
+.bars i{width:3px;height:3px;border-radius:2px;background:var(--a1)}
+.tt.on .bars i{animation:eq 1s ease-in-out infinite}
+.bars i:nth-child(2){animation-delay:.25s!important}.bars i:nth-child(3){animation-delay:.5s!important}.bars i:nth-child(4){animation-delay:.12s!important}.bars i:nth-child(5){animation-delay:.38s!important}
+@keyframes eq{0%,100%{height:3px}50%{height:18px}}
+.tt:not(.on):not(.open) .deck{animation:glow 2.6s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 7px #ff3b2f2e,0 24px 50px -20px #000}}
+.sp{width:340px;padding:14px;border-radius:20px;background:#141418f5;border:1px solid #ffffff1f;backdrop-filter:blur(14px);box-shadow:0 30px 70px -24px #000;transform-origin:100% 100%;transition:transform .5s var(--ease),opacity .3s}
+.tt:not(.open) .sp{position:absolute;right:0;bottom:96px;transform:scale(.5) translateY(30px);opacity:0;pointer-events:none}
+.sp-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 2px 10px}
+.sp-h b{font:400 20px var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.sp-h small{display:block;font:600 11px var(--mono);color:var(--mute)}
+.sp-h button{width:38px;height:38px;border-radius:50%;border:1px solid #ffffff26;background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center}
+.sp-h button:hover,.sp-h button:focus-visible{background:var(--a1);border-color:var(--a1);outline:none}
+.sp-h button svg{width:16px;height:16px;fill:currentColor}
+.sp-frame{border-radius:12px;overflow:hidden;min-height:152px;background:#1f1f25}
+.sp-frame iframe{display:block;border:0}
+.sp-note{margin:10px 2px 0;font-size:11.5px;color:var(--mute);line-height:1.45}
+@media(max-width:700px){.tt{right:12px;bottom:calc(14px + env(safe-area-inset-bottom))}.deck{padding:7px 16px 7px 7px;gap:10px}.plat{width:52px;height:52px}.label{inset:16px}.prog-ring{inset:-4px}.arm{height:48px;width:28px;transform-origin:21px 6px}.plat{margin-right:14px}.dk-t span,.dk-t small{display:none}.sp{width:min(340px,calc(100vw - 24px))}}
 
 /* lightbox + toast + fx */
 .lb{position:fixed;inset:0;z-index:250;background:#070708f5;display:flex;align-items:center;justify-content:center;padding:64px 80px;opacity:0;pointer-events:none;transition:opacity .35s}
@@ -583,15 +592,22 @@ body.ld{overflow:hidden}
   <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
 </div>
 
-<div class="mz" id="mz">
-  <div class="mz-card" id="mzCard" aria-label="Pemutar musik">
-    <div class="vid"><div id="ytp"></div></div>
-    <div class="row2"><b>Bersenja Gurau<small>Raim Laode · YouTube</small></b>
-      <button id="mzPlay" aria-label="Putar atau jeda"><svg viewBox="0 0 24 24" id="mzIco"><path d="M8 5v14l11-7z"/></svg></button>
-      <button id="mzMin" aria-label="Kecilkan pemutar"><svg viewBox="0 0 24 24"><path d="M5 11h14v2H5z"/></svg></button></div>
-    <input class="vol" id="mzVol" type="range" min="0" max="100" value="60" aria-label="Volume">
+<div class="tt" id="tt">
+  <div class="sp" id="sp" aria-label="Pemutar Spotify">
+    <div class="sp-h"><div><b>Sedang diputar</b><small>Bersenja Gurau · Raim Laode</small></div>
+      <button id="spMin" aria-label="Kecilkan pemutar"><svg viewBox="0 0 24 24"><path d="M5 11h14v2H5z"/></svg></button></div>
+    <div class="sp-frame"><div id="spEmbed"></div></div>
+    <p class="sp-note">Diputar dari Spotify. Masuk ke Spotify di browser ini untuk mendengar lagu penuh.</p>
   </div>
-  <button class="mz-btn" id="mzBtn" aria-label="Putar musik: Bersenja Gurau oleh Raim Laode" data-cur="MUSIK"><span class="disc"></span><span class="mz-t"><b id="mzLbl">Putar musik</b><small>Bersenja Gurau · Raim Laode</small></span><span class="eq"><i></i><i></i><i></i><i></i></span></button>
+  <button class="deck" id="deck" aria-label="Putar musik: Bersenja Gurau oleh Raim Laode" data-cur="MUSIK">
+    <span class="plat">
+      <svg class="prog-ring" viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="38"/><circle class="fg" id="ringFg" cx="40" cy="40" r="38"/></svg>
+      <span class="vinyl"></span><span class="label" id="lbl"></span>
+      <svg class="arm" viewBox="0 0 34 60" aria-hidden="true"><circle cx="26" cy="8" r="6" fill="#d9d4cc" stroke="#888" stroke-width="1.2"/><circle cx="26" cy="8" r="2.2" fill="#555"/><path d="M26 8 L22 44 L14 54" fill="none" stroke="#d9d4cc" stroke-width="2.6" stroke-linecap="round"/><rect x="8" y="50" width="10" height="7" rx="1.5" transform="rotate(35 13 53)" fill="#ff3b2f"/></svg>
+    </span>
+    <span class="dk-t"><small id="dkS">♪ KLIK UNTUK MEMUTAR</small><b id="dkB">Bersenja Gurau</b><span>Raim Laode</span></span>
+    <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+  </button>
 </div>
 <div class="toast" id="toast" role="status"></div>
 
@@ -767,23 +783,22 @@ let pi=0;
 $('logo').addEventListener('click',e=>{e.preventDefault();pi=(pi+1)%pals.length;const [n,a,b]=pals[pi];const st=document.documentElement.style;st.setProperty('--a1',a);st.setProperty('--a2',b);msg('Tema warna: '+n);scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
 
 
-/* music player (official YouTube video) */
-const VID='jmvX6XyvCy0';
-const mz=$('mz'),mzBtn=$('mzBtn'),mzLbl=$('mzLbl'),mzIco=$('mzIco');let yt=null,ytReady=false,loading=false,wantPlay=false;
-const icoPlay='<path d="M8 5v14l11-7z"/>',icoPause='<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
-const setUI=p=>{mz.classList.toggle('on',p);mzLbl.textContent=p?'Sedang diputar':'Putar musik';mzIco.innerHTML=p?icoPause:icoPlay};
-const loadYT=()=>{if(loading)return;loading=true;
-  window.onYouTubeIframeAPIReady=()=>{yt=new YT.Player('ytp',{videoId:VID,playerVars:{playsinline:1,rel:0,modestbranding:1},
-    events:{onReady:e=>{ytReady=true;e.target.setVolume(+$('mzVol').value);if(wantPlay)e.target.playVideo()},
-      onStateChange:e=>{if(e.data===1)setUI(true);else if(e.data===2)setUI(false);else if(e.data===0){e.target.seekTo(0);e.target.playVideo()}},
-      onError:()=>{msg('Video tidak bisa diputar di sini, membuka YouTube…');setUI(false);location.href='https://youtu.be/'+VID}}})};
-  const sc=document.createElement('script');sc.src='https://www.youtube.com/iframe_api';sc.onerror=()=>{msg('Musik gagal dimuat. Periksa koneksi internet.');loading=false};document.head.append(sc)};
-const toggle=()=>{mz.classList.add('open');if(!ytReady){wantPlay=true;loadYT();return}
-  const st=yt.getPlayerState();if(st===1){yt.pauseVideo()}else{yt.playVideo()}};
-mzBtn.addEventListener('click',toggle);
-$('mzPlay').addEventListener('click',toggle);
-$('mzMin').addEventListener('click',()=>mz.classList.remove('open'));
-$('mzVol').addEventListener('input',e=>{if(ytReady)yt.setVolume(+e.target.value)});
+/* music player: official Spotify embed */
+const TRACK='4DrJqdZgPBHoMNVG5iOLlG';
+const ttEl=$('tt'),deck=$('deck'),dkS=$('dkS'),ringFg=$('ringFg');let ctrl=null,loadingSp=false,wantSp=false,playing=false;
+const setPlay=p=>{playing=p;ttEl.classList.toggle('on',p);dkS.textContent=p?'● SEDANG DIPUTAR':'♪ KLIK UNTUK MEMUTAR'};
+fetch('https://open.spotify.com/oembed?url=https://open.spotify.com/track/'+TRACK).then(r=>r.json()).then(d=>{if(d&&d.thumbnail_url&&/^https:\/\//.test(d.thumbnail_url))$('lbl').style.backgroundImage='url("'+d.thumbnail_url.replace(/"/g,'')+'")'}).catch(()=>{});
+const loadSp=()=>{if(loadingSp)return;loadingSp=true;
+  window.onSpotifyIframeApiReady=api=>{api.createController($('spEmbed'),{uri:'spotify:track:'+TRACK,width:'100%',height:152},c=>{ctrl=c;
+    c.addListener('ready',()=>{if(wantSp){try{c.play()}catch(e){}}});
+    c.addListener('playback_update',e=>{const d=e.data||{};setPlay(!d.isPaused&&!d.isBuffering);if(d.duration)ringFg.style.strokeDashoffset=239*(1-(d.position||0)/d.duration)})})};
+  const sc=document.createElement('script');sc.src='https://open.spotify.com/embed/iframe-api/v1';sc.async=true;sc.onerror=()=>{loadingSp=false;sc.remove();if(wantSp){msg('Musik gagal dimuat. Membuka Spotify…');setTimeout(()=>{location.href='https://open.spotify.com/track/'+TRACK},1200)}};document.head.append(sc)};
+deck.addEventListener('click',()=>{const wasOpen=ttEl.classList.contains('open');ttEl.classList.add('open');
+  if(!ctrl){wantSp=true;loadSp();return}
+  if(playing){ctrl.pause()}else{ctrl.resume?ctrl.resume():ctrl.togglePlay()}
+  if(!wasOpen&&playing)return});
+$('spMin').addEventListener('click',()=>ttEl.classList.remove('open'));
+setTimeout(()=>{if(!ctrl)loadSp()},4000);
 
 /* copy */
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);msg('Tersalin: '+b.dataset.copy)}catch(e){msg('Gagal menyalin, silakan salin manual')}}));
